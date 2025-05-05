@@ -9,7 +9,6 @@ public class Example {
 		}
 	}
 	
-	
 	public static void main(String[] args) {
 		action(new A());
 		action(new B());
