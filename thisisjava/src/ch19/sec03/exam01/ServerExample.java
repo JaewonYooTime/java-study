@@ -7,9 +7,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class ServerExample {
-	
 	public static ServerSocket serverSocket = null;
-	
 	public static void main(String[] args) {
 		System.out.println("-----------------------");
 		System.out.println("서버를 종료하려면 q 또는 Q를 입력하고 Enter 키를 입력하세요.");
@@ -18,7 +16,7 @@ public class ServerExample {
 		//TCP 서버 시작
 		startServer();
 		
-		//키보드 입
+		//키보드 입력
 		Scanner scanner = new Scanner(System.in);
 		while(true) {
 			String key = scanner.nextLine();
@@ -51,11 +49,11 @@ public class ServerExample {
 						
 						//연결된 클라이언트 정보 얻기
 						InetSocketAddress isa = (InetSocketAddress) socket.getRemoteSocketAddress();
-						System.out.println("[서버] " + isa.getHostName() + "의 연결 요청을 수락");
+						System.out.println("[서버] " + isa.getHostString() + "의 연결 요청을 수락");
 						
 						//연결 끊기
 						socket.close();
-						System.out.println("[서버] " + isa.getHostName() + "의 연결을 끊");
+						System.out.println("[서버] " + isa.getHostString() + "의 연결을 끊음");
 					}
 					
 				} catch (IOException e) {
